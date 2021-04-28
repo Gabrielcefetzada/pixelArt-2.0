@@ -1,0 +1,36 @@
+.tool {
+    background-color: rgb(255, 255, 255);
+    width: 75px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px rgb(116, 94, 230);
+    transition: 0.1s;
+}
+
+.tool:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+
+.active {
+    background-color: rgb(236, 161, 224);
+}
+
+.tool img {
+    padding: 10px;
+    width: 35px;
+    height: 45px;
+}
+
+.container-tools {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+    left: 0;
+    height: 250px;
+    width: 170px;
+    background-color: rgb(97, 10, 97);
+    padding: 20px;
+}

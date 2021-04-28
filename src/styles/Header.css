@@ -1,0 +1,16 @@
+.header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   list-style: none;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+}
+
+.header a {
+    text-decoration: none;
+    cursor: pointer;
+}
