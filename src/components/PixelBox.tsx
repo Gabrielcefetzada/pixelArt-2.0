@@ -65,7 +65,6 @@ export const PixelBox = () => {
     
     return (
         <div>
-            <h1>PixelBox</h1>
             <h1 className="tool-h1">Ferramentas</h1>
                 <div className="container-tools">
                     {tools.map((tool, index) => (
