@@ -1,0 +1,23 @@
+.container-pixel-box {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50%;
+    width: 710px;
+    transform: translateX(-50%);
+    border: solid 3px rgb(92, 92, 92);
+}
+
+.pixel {
+    width: 10px;
+    height: 10px;
+    margin: 0;
+}
+
+.blackPixel {
+    background-color: rgb(221, 219, 219);
+}
+
+.greyPixel {
+    background-color: white;
+}
