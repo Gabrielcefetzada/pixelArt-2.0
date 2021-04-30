@@ -1,0 +1,40 @@
+.container-colorp {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+    left: 0;
+    height: 50px;
+    width: 130px;
+    background-color: rgb(85, 53, 145);
+    padding: 20px;
+    border-radius: 0px 0px 15px 0px;
+}
+
+.container-colorp img {
+    width: 45px;
+    height: 45px;
+}
+
+.content-white {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.container-colorp input {
+    border: initial;
+	background-color: rgb(80, 39, 104);
+    padding: 10px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.container-colorp input:hover {
+    filter: brightness(1.3);
+}
