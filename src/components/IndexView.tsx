@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import '../styles/Tool.css'
 import '../styles/global.css'
 import '../styles/colorp.css'
+import '../styles/PixelBox.css'
 import { Tool } from './Tool'
-import { PixelBox } from './PixelBox'
 import { ToolProps } from './Tool'
+import InputColor from 'react-input-color';
 
 // images
 
@@ -19,6 +20,16 @@ import colorpImg from '../images/selecionador-de-cores.png'
 
 export const IndexView = () => {
 
+    const [currentTool, setCurrentTool] = useState('pencil')
+    const [colorValue, setColorValue] = useState("");
+    const [inputValue, setInputValue] = useState("");
+    const style = { backgroundColor: colorValue }
+
+    let auxArray = [];
+    for(let i = 0; i < 1562; i++){
+        auxArray.push("auxElement")
+    }
+ 
     const vectorTools = [
         {
             key: 1,
@@ -56,17 +67,24 @@ export const IndexView = () => {
             tool: "tool6",
         },
     ];
-
-    const [tools, setTools] = useState<ToolProps[]>([])
-    const [name, setName] = useState('')
     
     useEffect(() => {
         setTools(vectorTools)
     }, [])
+
+    const [tools, setTools] = useState<ToolProps[]>([])
+    const [name, setName] = useState('')
     
     return (
         <div>
-            <PixelBox />
+           <div className="container-pixel-box">
+                        {auxArray.map((elem) => (
+                            <>
+                                <div className="pixel blackPixel" onClick={() =>  setColorValue(inputValue)}
+                                style={style}></div><div className="pixel greyPixel"></div>
+                            </>
+                        ))}
+            </div>
             <h1 className="tool-h1">Ferramentas</h1>
                 <div className="container-tools">
                     {tools.map((tool, index) => (
@@ -81,9 +99,11 @@ export const IndexView = () => {
                 </div>
                 <div className="container-colorp">
                     <div className="content-white">
-                     <img src={colorp}></img>⠀<input type="color"></input>
+                     <img src={colorp}></img>⠀
+                     <input type="color" value={inputValue} onChange={e => setInputValue(() => e.target.value)}/>
                     </div>
                 </div>
+                <button onClick={() => console.log(colorValue)}>Ver</button>
         </div>
     )
 }

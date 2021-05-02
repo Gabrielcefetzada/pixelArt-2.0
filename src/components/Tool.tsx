@@ -9,7 +9,7 @@ export interface ToolProps {
     onClick?: () => any; 
 }
 
-export const Tool = ({key, active = false, photo, tool, onClick} : ToolProps) => {
+export const Tool = ({key, active = false, photo, onClick} : ToolProps) => {
 
     return (
         <div>
