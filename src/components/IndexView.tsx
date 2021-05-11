@@ -25,9 +25,13 @@ export const IndexView = () => {
     const [inputValue, setInputValue] = useState("");
     const style = { backgroundColor: colorValue }
 
-    let auxArray = [];
+    let auxArray: {name: string, color1: string, color2: string}[] = [];
     for(let i = 0; i < 1562; i++){
-        auxArray.push("auxElement")
+        auxArray.push({
+            name: "auxEl",
+            color1: inputValue,
+            color2: inputValue
+        })
     }
  
     const vectorTools = [
@@ -78,10 +82,11 @@ export const IndexView = () => {
     return (
         <div>
            <div className="container-pixel-box">
-                        {auxArray.map((elem) => (
-                            <>
-                                <div className="pixel blackPixel" onClick={() =>  setColorValue(inputValue)}
-                                style={style}></div><div className="pixel greyPixel"></div>
+                        {auxArray.map((elem, index) => (
+                            <>                           
+                                <div className="pixel blackPixel" key={index} onClick={() =>  { elem.color1 = inputValue; setColorValue(elem.color1);}}
+                                style={{backgroundColor: elem.color1}}></div>
+                                <div className="pixel greyPixel"></div>
                             </>
                         ))}
             </div>
@@ -103,7 +108,7 @@ export const IndexView = () => {
                      <input type="color" value={inputValue} onChange={e => setInputValue(() => e.target.value)}/>
                     </div>
                 </div>
-                <button onClick={() => console.log(colorValue)}>Ver</button>
+                <button onClick={() => console.log(auxArray)}>Ver</button>
         </div>
     )
 }
