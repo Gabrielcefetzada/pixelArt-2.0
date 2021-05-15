@@ -17,22 +17,39 @@ import pencil from '../images/lapis.png'
 import bigPencil from '../images/pincel.png'
 import  borrow from '../images/borracha.png'
 import colorpImg from '../images/selecionador-de-cores.png'
+import loadingGif from '../images/loading.gif'
 
 export const IndexView = () => {
 
+    interface auxArrayInterface {
+        name: string;
+        color1: string;
+        color2: string;
+    } 
+
     const [currentTool, setCurrentTool] = useState('pencil')
     const [colorValue, setColorValue] = useState("");
+    const [loading, setLoading] = useState(true)
     const [inputValue, setInputValue] = useState("");
-    const style = { backgroundColor: colorValue }
+    const [auxArray, setAuxArray] = useState<auxArrayInterface[]>([])
+    
+   useEffect(() => {
+        const initializeArray = () => {
+            const newAuxArray = [];
+            for(let i = 0; i < 1562; i++) {
+                newAuxArray.push({ 
+                    name: "auxEl",
+                    color1: inputValue,
+                    color2: inputValue
+                })
+            } 
+            setAuxArray(newAuxArray);
+            setLoading(false)
+        }
 
-    let auxArray: {name: string, color1: string, color2: string}[] = [];
-    for(let i = 0; i < 1562; i++){
-        auxArray.push({
-            name: "auxEl",
-            color1: inputValue,
-            color2: inputValue
-        })
-    }
+        initializeArray()
+   }, [])
+   
  
     const vectorTools = [
         {
@@ -78,18 +95,27 @@ export const IndexView = () => {
 
     const [tools, setTools] = useState<ToolProps[]>([])
     const [name, setName] = useState('')
+
+    const paintWithPencil = (pixelBoxes:  auxArrayInterface[], indexParam: number) => {
+        pixelBoxes[indexParam].color1 = inputValue
+        console.log(pixelBoxes)
+    }
     
     return (
         <div>
-           <div className="container-pixel-box">
-                        {auxArray.map((elem, index) => (
-                            <>                           
-                                <div className="pixel blackPixel" key={index} onClick={() =>  { elem.color1 = inputValue; setColorValue(elem.color1);}}
-                                style={{backgroundColor: elem.color1}}></div>
-                                <div className="pixel greyPixel"></div>
-                            </>
-                        ))}
-            </div>
+            {loading ? (
+                <img className="loading-icon" src={loadingGif}></img>
+            ) : (
+                <div className="container-pixel-box">
+                {auxArray.map((elem, index) => (
+                    <>                           
+                        <div className="pixel blackPixel" key={index} onClick={() => {paintWithPencil(auxArray, index); setColorValue(elem.color1)}}
+                        style={{backgroundColor: elem.color1}}></div>
+                        <div className="pixel greyPixel"></div>
+                    </>
+                ))}
+                 </div>
+            )}
             <h1 className="tool-h1">Ferramentas</h1>
                 <div className="container-tools">
                     {tools.map((tool, index) => (

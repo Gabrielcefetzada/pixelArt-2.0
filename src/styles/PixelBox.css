@@ -21,3 +21,10 @@
 .greyPixel {
     background-color: white;
 }
+
+.loading-icon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+}
