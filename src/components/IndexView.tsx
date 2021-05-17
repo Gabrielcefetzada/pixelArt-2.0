@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, MouseEvent} from 'react';
 import '../styles/Tool.css'
 import '../styles/global.css'
 import '../styles/colorp.css'
@@ -96,11 +96,14 @@ export const IndexView = () => {
     const [tools, setTools] = useState<ToolProps[]>([])
     const [name, setName] = useState('')
 
-    const paintWithPencil = (pixelBoxes:  auxArrayInterface[], indexParam: number) => {
-        pixelBoxes[indexParam].color1 = inputValue
-        console.log(pixelBoxes)
+    const paintWithPencilColor1 = (pixelBoxes:  auxArrayInterface[], indexParam: number) => {
+            pixelBoxes[indexParam].color1 = inputValue
     }
-    
+
+    const paintWithPencilColor2 = (pixelBoxes:  auxArrayInterface[], indexParam: number) => {
+        pixelBoxes[indexParam].color2 = inputValue
+}
+
     return (
         <div>
             {loading ? (
@@ -109,9 +112,11 @@ export const IndexView = () => {
                 <div className="container-pixel-box">
                 {auxArray.map((elem, index) => (
                     <>                           
-                        <div className="pixel blackPixel" key={index} onClick={() => {paintWithPencil(auxArray, index); setColorValue(elem.color1)}}
+                        <div className="pixel blackPixel" key={index} onClick={() => 
+                        {paintWithPencilColor1(auxArray, index); setColorValue(elem.color1)}}
                         style={{backgroundColor: elem.color1}}></div>
-                        <div className="pixel greyPixel"></div>
+                        <div className="pixel greyPixel" onClick={() => 
+                        {paintWithPencilColor2(auxArray, index); setColorValue(elem.color2)}} style={{backgroundColor: elem.color2}}></div>
                     </>
                 ))}
                  </div>
