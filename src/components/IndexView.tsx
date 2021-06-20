@@ -91,18 +91,41 @@ export const IndexView = () => {
     
     useEffect(() => {
         setTools(vectorTools)
-    }, [])
+    }, []) 
 
     const [tools, setTools] = useState<ToolProps[]>([])
     const [name, setName] = useState('')
 
-    const paintWithPencilColor1 = (pixelBoxes:  auxArrayInterface[], indexParam: number) => {
-            pixelBoxes[indexParam].color1 = inputValue
+    const paintWithPencilColor1 = (indexParam: number) => {
+        let tempAuxArray = [...auxArray]
+        auxArray[indexParam].color1 = inputValue
+        setAuxArray(tempAuxArray)
     }
 
-    const paintWithPencilColor2 = (pixelBoxes:  auxArrayInterface[], indexParam: number) => {
-        pixelBoxes[indexParam].color2 = inputValue
-}
+    const paintWithPencilColor2 = (indexParam: number) => {
+        let tempAuxArray = [...auxArray]
+        auxArray[indexParam].color2 = inputValue
+        setAuxArray(tempAuxArray)
+    }
+
+    const rubberColor1 = (indexParam: number) => {
+        let tempAuxArray = [...auxArray]
+        auxArray[indexParam].color1 = "#dddbdb"
+        setAuxArray(tempAuxArray)
+    }
+
+    const rubberColor2 = (indexParam: number) => {
+        let tempAuxArray = [...auxArray]
+        auxArray[indexParam].color2 = "#ffffff"
+        setAuxArray(tempAuxArray)
+    }
+
+    const paintWhitBigPencil = (indexParam: number) => {
+
+    }
+
+    let functions = []
+    functions.push(paintWithPencilColor1, paintWithPencilColor2)
 
     return (
         <div>
@@ -113,10 +136,10 @@ export const IndexView = () => {
                 {auxArray.map((elem, index) => (
                     <>                           
                         <div className="pixel blackPixel" key={index} onClick={() => 
-                        {paintWithPencilColor1(auxArray, index); setColorValue(elem.color1)}}
+                        {paintWithPencilColor1(index); setColorValue(elem.color1)}}
                         style={{backgroundColor: elem.color1}}></div>
                         <div className="pixel greyPixel" onClick={() => 
-                        {paintWithPencilColor2(auxArray, index); setColorValue(elem.color2)}} style={{backgroundColor: elem.color2}}></div>
+                        {paintWithPencilColor2(index); setColorValue(elem.color2)}} style={{backgroundColor: elem.color2}}></div>
                     </>
                 ))}
                  </div>
