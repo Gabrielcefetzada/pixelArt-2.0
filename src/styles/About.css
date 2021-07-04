@@ -1,0 +1,81 @@
+.container-both {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me,
+.about-container-text {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 255),
+    rgb(211, 210, 210)
+  );
+  width: 250px;
+  border-radius: 15px;
+  border: 2px solid purple;
+  margin: 1%;
+  min-height: 450px;
+}
+
+.me {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid purple;
+}
+
+.location {
+  border: 1px solid purple;
+  border-radius: 30px;
+  padding: 3px 10px 3px 10px;
+}
+
+.about-text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2rem;
+}
+
+.text-1,
+.text-2 {
+  color: rgb(22, 22, 22);
+}
+
+.social-medias {
+  background-color: rgb(90, 25, 90);
+  color: white;
+  width: 80%;
+  padding: 10px;
+  font-size: 20px;
+  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#sm1:hover,
+#sm2:hover,
+#sm3:hover {
+  filter: brightness(1.1) !important;
+}
+
+.about-container-text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2rem;
+}
+
+.react-icon {
+  font-size: 30px;
+  color: rgb(65, 5, 65);
+}
+
+.ts-icon {
+  font-size: 30px;
+  color: rgb(65, 5, 65);
+}
