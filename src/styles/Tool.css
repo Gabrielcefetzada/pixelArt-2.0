@@ -1,50 +1,53 @@
 .tool {
-    background-color: rgb(85, 53, 145);
-    width: 55px;
-    border-radius: 3px;
-    transition: 0.1s;
+  background-color: rgb(85, 53, 145);
+  width: 55px;
+  border-radius: 3px;
+  transition: 0.1s;
 }
 
 .tool:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    background-color: rgb(30, 11, 46);
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: rgb(30, 11, 46);
 }
 
 .active {
-    background-color: rgb(30, 11, 46);
+  background-color: rgb(30, 11, 46);
 }
 
 .tool img {
-    padding: 10px;
-    width: 35px;
-    height: 35px;
+  padding: 10px;
+  width: 35px;
+  height: 35px;
 }
 
 .container-tools {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 3%;
-    left: 0;
-    height: 250px;
-    width: 130px;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  left: 0;
+  height: 150px;
+  width: 130px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+.container-tools div:first-child {
+  margin-right: 10%;
 }
 
 .tool-h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 0;
-    color: white;
-    font-size: 1.5rem;
-    margin: 0;
-    height: 50px;
-    width: 130px;
-    background-color: rgb(85, 53, 145);
-    padding: 20px;
-    border-radius: 0px 15px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  height: 50px;
+  width: 130px;
+  background-color: rgb(85, 53, 145);
+  padding: 20px;
+  border-radius: 0px 15px 0px 0px;
 }
