@@ -16,16 +16,16 @@
     rgb(255, 255, 255),
     rgb(211, 210, 210)
   );
-  width: 250px;
+  width: 350px;
   border-radius: 15px;
   border: 2px solid purple;
   margin: 1%;
-  min-height: 450px;
+  min-height: 460px;
 }
 
 .me {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 3px solid purple;
 }
@@ -82,11 +82,4 @@ a {
 .ts-icon {
   font-size: 30px;
   color: rgb(65, 5, 65);
-}
-
-.background {
-  background-image: url("../images/wallpaper.jpg");
-  margin: 0%;
-  background-position: center bottom;
-  background-size: 100%;
 }

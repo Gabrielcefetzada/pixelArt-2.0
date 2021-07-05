@@ -12,7 +12,6 @@ import colorp from "../images/color_picker.png";
 import pencil from "../images/lapis.png";
 import borrow from "../images/borracha.png";
 import colorpImg from "../images/selecionador-de-cores.png";
-import loadingGif from "../images/loading.gif";
 
 export const IndexView = () => {
   interface auxArrayInterface {
@@ -99,7 +98,7 @@ export const IndexView = () => {
   return (
     <div className="background">
       {loading ? (
-        <img className="loading-icon" src={loadingGif}></img>
+        <p className="white-text">Carregando...</p>
       ) : (
         <>
           <br></br> <br></br>
@@ -161,6 +160,10 @@ export const IndexView = () => {
       <p>ﾠ</p>
       <p>ﾠ</p>
       <p>ﾠ</p>
+      <p className="white-text">
+        Visite o repositório deste projeto clicando{" "}
+        <a href="https://github.com/Gabrielcefetzada/pixelArt-2.0">aqui</a>
+      </p>
       <p>ﾠ</p>
       <p>ﾠ</p>
       <p>ﾠ</p>

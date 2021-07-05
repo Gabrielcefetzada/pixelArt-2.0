@@ -55,6 +55,10 @@ export const About = () => {
       </div>
       <p>ﾠ</p>
       <p>ﾠ</p>
+      <p className="white-text">
+        Visite o repositório deste projeto clicando{" "}
+        <a href="https://github.com/Gabrielcefetzada/pixelArt-2.0">aqui</a>
+      </p>
       <p>ﾠ</p>
       <p>ﾠ</p>
       <p>ﾠ</p>
