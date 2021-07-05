@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.background {
+  background-image: url("./images/wallpaper.jpg");
+  margin: 0%;
+  background-position: center bottom;
+  background-size: 100%;
+}

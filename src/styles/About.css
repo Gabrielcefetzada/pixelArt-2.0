@@ -24,8 +24,8 @@
 }
 
 .me {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 3px solid purple;
 }
@@ -59,10 +59,14 @@
   border-radius: 5px 5px 5px 5px;
 }
 
-#sm1:hover,
-#sm2:hover,
-#sm3:hover {
-  filter: brightness(1.1) !important;
+.sm:hover {
+  color: rgb(201, 125, 201);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .about-container-text {
@@ -78,4 +82,11 @@
 .ts-icon {
   font-size: 30px;
   color: rgb(65, 5, 65);
+}
+
+.background {
+  background-image: url("../images/wallpaper.jpg");
+  margin: 0%;
+  background-position: center bottom;
+  background-size: 100%;
 }

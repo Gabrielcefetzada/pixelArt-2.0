@@ -5,16 +5,11 @@ import "../styles/colorp.css";
 import "../styles/PixelBox.css";
 import { Tool } from "./Tool";
 import { ToolProps } from "./Tool";
-import InputColor from "react-input-color";
 
 // images
 
-import logo from "../images/logo_pixel.png";
 import colorp from "../images/color_picker.png";
-import bucket from "../images/balde-de-tinta.png.png";
-import ligth from "../images/iluminador.png";
 import pencil from "../images/lapis.png";
-import bigPencil from "../images/pincel.png";
 import borrow from "../images/borracha.png";
 import colorpImg from "../images/selecionador-de-cores.png";
 import loadingGif from "../images/loading.gif";
@@ -26,11 +21,9 @@ export const IndexView = () => {
     color2: string;
   }
 
-  const [currentTool, setCurrentTool] = useState("pencil");
   const [colorValue, setColorValue] = useState("");
   const [loading, setLoading] = useState(true);
   const [inputValue, setInputValue] = useState("");
-  const [toolsFunctionsArray, setToolsfunctionsArray] = useState<any[]>([]);
   const [auxArray, setAuxArray] = useState<auxArrayInterface[]>([]);
 
   useEffect(() => {
@@ -77,6 +70,8 @@ export const IndexView = () => {
   const [tools, setTools] = useState<ToolProps[]>([]);
   const [name, setName] = useState("");
 
+  // Functions related about the tools
+
   const paintWithPencilColor1 = (indexParam: number) => {
     let tempAuxArray = [...auxArray];
     auxArray[indexParam].color1 = inputValue;
@@ -102,41 +97,44 @@ export const IndexView = () => {
   };
 
   return (
-    <div>
+    <div className="background">
       {loading ? (
         <img className="loading-icon" src={loadingGif}></img>
       ) : (
-        <div className="container-pixel-box">
-          {auxArray.map((elem, index) => (
-            <>
-              <div
-                className="pixel blackPixel"
-                key={index}
-                onMouseMove={() => {
-                  if (name === "pencil") {
-                    paintWithPencilColor1(index);
-                    setColorValue(elem.color1);
-                  } else if (name === "rubber") {
-                    rubberColor1(index);
-                  }
-                }}
-                style={{ backgroundColor: elem.color1 }}
-              ></div>
-              <div
-                className="pixel greyPixel"
-                onMouseMove={() => {
-                  if (name === "pencil") {
-                    paintWithPencilColor2(index);
-                    setColorValue(elem.color2);
-                  } else if (name === "rubber") {
-                    rubberColor2(index);
-                  }
-                }}
-                style={{ backgroundColor: elem.color2 }}
-              ></div>
-            </>
-          ))}
-        </div>
+        <>
+          <br></br> <br></br>
+          <div className="container-pixel-box">
+            {auxArray.map((elem, index) => (
+              <>
+                <div
+                  className="pixel blackPixel"
+                  key={index}
+                  onMouseMove={() => {
+                    if (name === "pencil") {
+                      paintWithPencilColor1(index);
+                      setColorValue(elem.color1);
+                    } else if (name === "rubber") {
+                      rubberColor1(index);
+                    }
+                  }}
+                  style={{ backgroundColor: elem.color1 }}
+                ></div>
+                <div
+                  className="pixel greyPixel"
+                  onMouseMove={() => {
+                    if (name === "pencil") {
+                      paintWithPencilColor2(index);
+                      setColorValue(elem.color2);
+                    } else if (name === "rubber") {
+                      rubberColor2(index);
+                    }
+                  }}
+                  style={{ backgroundColor: elem.color2 }}
+                ></div>
+              </>
+            ))}
+          </div>
+        </>
       )}
       <h1 className="tool-h1">Ferramentas</h1>
       <div className="container-tools">
@@ -160,7 +158,13 @@ export const IndexView = () => {
           />
         </div>
       </div>
-      <button onClick={() => console.log(auxArray)}>Ver</button>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
     </div>
   );
 };

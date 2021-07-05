@@ -10,8 +10,7 @@ import { SiTypescript } from "react-icons/si";
 
 export const About = () => {
   return (
-    <div>
-      <h1>Sobre o projeto e o autor</h1>
+    <div className="background">
       <div className="container-both">
         <div className="about-me">
           <img className="me" src={me} />
@@ -29,13 +28,19 @@ export const About = () => {
             </p>
           </div>
           <div className="social-medias">
-            <AiFillGithub id="sm1" />
-            <IoLogoTwitter id="sm2" />
-            <SiWhatsapp id="sm3" />
+            <a href="https://github.com/Gabrielcefetzada/">
+              <AiFillGithub className="sm" />
+            </a>
+            <a href="https://twitter.com/gabreuu_12">
+              <IoLogoTwitter className="sm" />
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5531995409722">
+              <SiWhatsapp className="sm" />
+            </a>
           </div>
         </div>
         <div className="about-container-text">
-          <h1>PixelArt 2.0</h1>
+          <h1>Pixelizados</h1>
           <p>
             Este pequeno projeto Front-end é uma evolução de uma antiga versão
             que ficou estagnada por alguns meses por falta de conhecimento. Com
@@ -48,6 +53,11 @@ export const About = () => {
           </p>
         </div>
       </div>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
+      <p>ﾠ</p>
     </div>
   );
 };
