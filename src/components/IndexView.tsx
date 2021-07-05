@@ -1,10 +1,10 @@
-import React, { useState, useEffect, MouseEvent } from "react";
-import "../styles/Tool.css";
-import "../styles/global.css";
-import "../styles/colorp.css";
-import "../styles/PixelBox.css";
+import React, { useState, useEffect } from "react";
 import { Tool } from "./Tool";
 import { ToolProps } from "./Tool";
+import "../styles/Tool.css";
+import "../styles/Global.css";
+import "../styles/Colorp.css";
+import "../styles/PixelBox.css";
 
 // images
 
@@ -24,6 +24,8 @@ export const IndexView = () => {
   const [loading, setLoading] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [auxArray, setAuxArray] = useState<auxArrayInterface[]>([]);
+  const [tools, setTools] = useState<ToolProps[]>([]);
+  const [name, setName] = useState("");
 
   useEffect(() => {
     const initializeArray = () => {
@@ -42,7 +44,7 @@ export const IndexView = () => {
     initializeArray();
   }, []);
 
-  const vectorTools = [
+  const arrayTools = [
     {
       key: 1,
       photo: pencil,
@@ -63,11 +65,8 @@ export const IndexView = () => {
   ];
 
   useEffect(() => {
-    setTools(vectorTools);
+    setTools(arrayTools);
   }, []);
-
-  const [tools, setTools] = useState<ToolProps[]>([]);
-  const [name, setName] = useState("");
 
   // Functions related about the tools
 
@@ -95,6 +94,10 @@ export const IndexView = () => {
     setAuxArray(tempAuxArray);
   };
 
+  const pickColor = (indexParam: number) => {
+    setInputValue(auxArray[indexParam].color1);
+  };
+
   return (
     <div className="background">
       {loading ? (
@@ -114,6 +117,8 @@ export const IndexView = () => {
                       setColorValue(elem.color1);
                     } else if (name === "rubber") {
                       rubberColor1(index);
+                    } else if (name === "colorP") {
+                      pickColor(index);
                     }
                   }}
                   style={{ backgroundColor: elem.color1 }}
@@ -126,6 +131,8 @@ export const IndexView = () => {
                       setColorValue(elem.color2);
                     } else if (name === "rubber") {
                       rubberColor2(index);
+                    } else if (name === "colorP") {
+                      pickColor(index);
                     }
                   }}
                   style={{ backgroundColor: elem.color2 }}

@@ -3,7 +3,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { IndexView } from "./components/IndexView";
-import { About } from "./components/About";
+import { AboutView } from "./components/AboutView";
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={IndexView} />
-          <Route path="/about" exact component={About} />
+          <Route path="/about" exact component={AboutView} />
         </Switch>
       </div>
     </Router>

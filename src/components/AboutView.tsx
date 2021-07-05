@@ -8,7 +8,7 @@ import { SiWhatsapp } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 
-export const About = () => {
+export const AboutView = () => {
   return (
     <div className="background">
       <div className="container-both">
