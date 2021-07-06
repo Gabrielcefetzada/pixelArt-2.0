@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/styles/About.css";
-import me from "../assets/images/me.jpeg";
+import me from "../assets/images/me.jpg";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
 import { IoLogoTwitter } from "react-icons/io";

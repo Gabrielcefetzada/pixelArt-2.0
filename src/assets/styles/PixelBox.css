@@ -7,6 +7,7 @@
   transform: translateX(-50%);
   border: solid 3px rgb(92, 92, 92);
   margin-top: 0px;
+  cursor: pointer;
 }
 
 .pixel {
