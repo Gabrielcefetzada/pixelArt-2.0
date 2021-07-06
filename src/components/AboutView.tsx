@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/About.css";
-import me from "../images/me.jpeg";
+import "../assets/styles/About.css";
+import me from "../assets/images/me.jpeg";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
 import { IoLogoTwitter } from "react-icons/io";
@@ -45,7 +45,7 @@ export const AboutView = () => {
             Este pequeno projeto Front-end é uma evolução de uma antiga versão
             que ficou estagnada por alguns meses por falta de conhecimento. Com
             necessidade constante em aprender e desenvolver, esta plataforma de
-            desenho foi desenvolvida dando continuidade na versão antiga.
+            desenho foi criada visando foco nas tecnologias abaixo.
           </p>
           <p>
             <FaReact className="react-icon" />{" "}
@@ -56,7 +56,7 @@ export const AboutView = () => {
       <p>ﾠ</p>
       <p>ﾠ</p>
       <p className="white-text">
-        Visite o repositório deste projeto clicando{" "}
+        Visite o repositório deste projeto clicando {">"}{" "}
         <a href="https://github.com/Gabrielcefetzada/pixelArt-2.0">aqui</a>
       </p>
       <p>ﾠ</p>

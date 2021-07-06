@@ -1,31 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { Tool } from "./Tool";
 import { ToolProps } from "./Tool";
-import "../styles/Tool.css";
-import "../styles/Global.css";
-import "../styles/Colorp.css";
-import "../styles/PixelBox.css";
+import "../assets/styles/Tool.css";
+import "../assets/styles/Global.css";
+import "../assets/styles/Colorp.css";
+import "../assets/styles/PixelBox.css";
 
 // images
 
-import colorp from "../images/color_picker.png";
-import pencil from "../images/lapis.png";
-import borrow from "../images/borracha.png";
-import colorpImg from "../images/selecionador-de-cores.png";
+import colorp from "../assets/images/color_picker.png";
+import pencil from "../assets/images/lapis.png";
+import borrow from "../assets/images/borracha.png";
+import colorpImg from "../assets/images/selecionador-de-cores.png";
+
+// interfaces
+
+interface auxArrayInterface {
+  name: string;
+  color1: string;
+  color2: string;
+}
 
 export const IndexView = () => {
-  interface auxArrayInterface {
-    name: string;
-    color1: string;
-    color2: string;
-  }
-
   const [colorValue, setColorValue] = useState("");
   const [loading, setLoading] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [auxArray, setAuxArray] = useState<auxArrayInterface[]>([]);
   const [tools, setTools] = useState<ToolProps[]>([]);
   const [name, setName] = useState("");
+  const [pressed, setPressed] = useState(false);
 
   useEffect(() => {
     const initializeArray = () => {
@@ -71,31 +74,41 @@ export const IndexView = () => {
   // Functions related about the tools
 
   const paintWithPencilColor1 = (indexParam: number) => {
-    let tempAuxArray = [...auxArray];
-    auxArray[indexParam].color1 = inputValue;
-    setAuxArray(tempAuxArray);
+    if (pressed) {
+      let tempAuxArray = [...auxArray];
+      auxArray[indexParam].color1 = inputValue;
+      setAuxArray(tempAuxArray);
+    }
   };
 
   const paintWithPencilColor2 = (indexParam: number) => {
-    let tempAuxArray = [...auxArray];
-    auxArray[indexParam].color2 = inputValue;
-    setAuxArray(tempAuxArray);
+    if (pressed) {
+      let tempAuxArray = [...auxArray];
+      auxArray[indexParam].color2 = inputValue;
+      setAuxArray(tempAuxArray);
+    }
   };
 
   const rubberColor1 = (indexParam: number) => {
-    let tempAuxArray = [...auxArray];
-    auxArray[indexParam].color1 = "#dddbdb";
-    setAuxArray(tempAuxArray);
+    if (pressed) {
+      let tempAuxArray = [...auxArray];
+      auxArray[indexParam].color1 = "#dddbdb";
+      setAuxArray(tempAuxArray);
+    }
   };
 
   const rubberColor2 = (indexParam: number) => {
-    let tempAuxArray = [...auxArray];
-    auxArray[indexParam].color2 = "#ffffff";
-    setAuxArray(tempAuxArray);
+    if (pressed) {
+      let tempAuxArray = [...auxArray];
+      auxArray[indexParam].color2 = "#ffffff";
+      setAuxArray(tempAuxArray);
+    }
   };
 
   const pickColor = (indexParam: number) => {
-    setInputValue(auxArray[indexParam].color1);
+    if (pressed) {
+      setInputValue(auxArray[indexParam].color1);
+    }
   };
 
   return (
@@ -111,6 +124,8 @@ export const IndexView = () => {
                 <div
                   className="pixel blackPixel"
                   key={index}
+                  onMouseUp={() => setPressed(false)}
+                  onMouseDown={() => setPressed(true)}
                   onMouseMove={() => {
                     if (name === "pencil") {
                       paintWithPencilColor1(index);
@@ -125,6 +140,8 @@ export const IndexView = () => {
                 ></div>
                 <div
                   className="pixel greyPixel"
+                  onMouseUp={() => setPressed(false)}
+                  onMouseDown={() => setPressed(true)}
                   onMouseMove={() => {
                     if (name === "pencil") {
                       paintWithPencilColor2(index);
@@ -168,7 +185,7 @@ export const IndexView = () => {
       <p>ﾠ</p>
       <p>ﾠ</p>
       <p className="white-text">
-        Visite o repositório deste projeto clicando{" "}
+        Visite o repositório deste projeto clicando {">"}{" "}
         <a href="https://github.com/Gabrielcefetzada/pixelArt-2.0">aqui</a>
       </p>
       <p>ﾠ</p>

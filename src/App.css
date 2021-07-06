@@ -38,7 +38,7 @@
 }
 
 body {
-  background-image: url("./images/wallpaper.jpg");
+  background-image: url("./assets/images/wallpaper.jpg");
   margin: 0%;
   background-position: center bottom;
   background-size: cover;
