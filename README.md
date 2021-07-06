@@ -6,7 +6,7 @@ Visite aqui -> https://vigilant-benz-c61ac1.netlify.app/
 
 * ReactJS
 * TypeScript
-* Deploy com Netifly
+* Deploy com Netlify
 
 <p align="center"><img src="demo/demo.gif" /></p>
 
