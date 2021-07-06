@@ -126,7 +126,7 @@ export const IndexView = () => {
                   key={index}
                   onMouseUp={() => setPressed(false)}
                   onMouseDown={() => setPressed(true)}
-                  onMouseEnter={() => {
+                  onMouseMove={() => {
                     if (name === "pencil") {
                       paintWithPencilColor1(index);
                       setColorValue(elem.color1);
@@ -142,7 +142,7 @@ export const IndexView = () => {
                   className="pixel greyPixel"
                   onMouseUp={() => setPressed(false)}
                   onMouseDown={() => setPressed(true)}
-                  onMouseEnter={() => {
+                  onMouseMove={() => {
                     if (name === "pencil") {
                       paintWithPencilColor2(index);
                       setColorValue(elem.color2);
