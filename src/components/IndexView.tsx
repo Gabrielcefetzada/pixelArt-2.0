@@ -66,12 +66,6 @@ export const IndexView = () => {
       photo: colorpImg,
       tool: "colorP",
     },
-
-    {
-      key: 4,
-      photo: broom,
-      tool: "broom",
-    },
   ];
 
   useEffect(() => {
@@ -119,20 +113,18 @@ export const IndexView = () => {
   };
 
   const cleanner = () => {
-    if (name === "broom") {
-      for (let i = 0; i < auxArray.length; i++) {
-        if (
-          auxArray[i].color1 !== "#dddbdb" ||
-          auxArray[i].color2 !== "#ffffff"
-        ) {
-          auxArray[i].color1 = "#dddbdb";
-          auxArray[i].color2 = "#ffffff";
-        }
+    for (let i = 0; i < auxArray.length; i++) {
+      if (
+        auxArray[i].color1 !== "#dddbdb" ||
+        auxArray[i].color2 !== "#ffffff"
+      ) {
+        auxArray[i].color1 = "#dddbdb";
+        auxArray[i].color2 = "#ffffff";
       }
-      let tempAuxArray = [...auxArray];
-      setAuxArray(tempAuxArray);
-      console.log("chamou");
     }
+    let tempAuxArray = [...auxArray];
+    setAuxArray(tempAuxArray);
+    console.log("chamou");
   };
 
   return (
@@ -187,16 +179,20 @@ export const IndexView = () => {
       <div className="container-tools">
         {tools.map((tool, index) => (
           <Tool
-            onClick={() => {
-              setName(tool.tool);
-              cleanner();
-            }}
+            onClick={() => setName(tool.tool)}
             tool={name}
             active={name === tool.tool ? true : false}
             photo={tool.photo}
             key={index}
           />
         ))}
+        <Tool
+          onClick={() => cleanner()}
+          tool={"broom"}
+          active={false}
+          photo={broom}
+          key={4}
+        />
       </div>
       <div className="container-colorp">
         <div className="content-white">
