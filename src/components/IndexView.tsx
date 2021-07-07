@@ -12,6 +12,7 @@ import colorp from "../assets/images/color_picker.png";
 import pencil from "../assets/images/lapis.png";
 import borrow from "../assets/images/borracha.png";
 import colorpImg from "../assets/images/selecionador-de-cores.png";
+import broom from "../assets/images/broom.png";
 
 // interfaces
 
@@ -65,6 +66,12 @@ export const IndexView = () => {
       photo: colorpImg,
       tool: "colorP",
     },
+
+    {
+      key: 4,
+      photo: broom,
+      tool: "broom",
+    },
   ];
 
   useEffect(() => {
@@ -108,6 +115,23 @@ export const IndexView = () => {
   const pickColor = (indexParam: number) => {
     if (pressed) {
       setInputValue(auxArray[indexParam].color1);
+    }
+  };
+
+  const cleanner = () => {
+    if (name === "broom") {
+      for (let i = 0; i < auxArray.length; i++) {
+        if (
+          auxArray[i].color1 !== "#dddbdb" ||
+          auxArray[i].color2 !== "#ffffff"
+        ) {
+          auxArray[i].color1 = "#dddbdb";
+          auxArray[i].color2 = "#ffffff";
+        }
+      }
+      let tempAuxArray = [...auxArray];
+      setAuxArray(tempAuxArray);
+      console.log("chamou");
     }
   };
 
@@ -163,7 +187,10 @@ export const IndexView = () => {
       <div className="container-tools">
         {tools.map((tool, index) => (
           <Tool
-            onClick={() => setName(tool.tool)}
+            onClick={() => {
+              setName(tool.tool);
+              cleanner();
+            }}
             tool={name}
             active={name === tool.tool ? true : false}
             photo={tool.photo}

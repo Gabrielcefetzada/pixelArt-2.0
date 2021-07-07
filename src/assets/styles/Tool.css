@@ -23,7 +23,7 @@
 
 .container-tools {
   display: flex;
-  justify-content: center !important;
+  justify-content: space-around !important;
   align-items: center !important;
   flex-wrap: wrap;
   left: 0;
@@ -31,10 +31,6 @@
   width: 130px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
-}
-
-.container-tools div:first-child {
-  margin-right: 10%;
 }
 
 .tool-h1 {
