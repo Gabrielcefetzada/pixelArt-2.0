@@ -24,7 +24,7 @@ interface auxArrayInterface {
 export const IndexView = () => {
   const [colorValue, setColorValue] = useState("");
   const [loading, setLoading] = useState(true);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("#000000"); // preto como cor padrão
   const [auxArray, setAuxArray] = useState<auxArrayInterface[]>([]);
   const [tools, setTools] = useState<ToolProps[]>([]);
   const [name, setName] = useState("");
