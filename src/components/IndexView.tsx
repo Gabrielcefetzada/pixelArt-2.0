@@ -36,8 +36,8 @@ export const IndexView = () => {
       for (let i = 0; i < 1562; i++) {
         newAuxArray.push({
           name: "auxEl",
-          color1: inputValue,
-          color2: inputValue,
+          color1: "#dddbdb",
+          color2: "#ffffff",
         });
       }
       setAuxArray(newAuxArray);
