@@ -8,5 +8,5 @@ Visite aqui -> https://vigilant-benz-c61ac1.netlify.app/
 * TypeScript
 * Deploy com Netlify
 
-<p align="center"><img src="demo/demo.gif" /></p>
+<p><img src="demo/demo.gif" /></p>
 
