@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { IndexView } from "./components/IndexView";
-import { AboutView } from "./components/AboutView";
+import { IndexView } from "./views/IndexView";
+import { AboutView } from "./views/AboutView";
 
 export default function App() {
   return (

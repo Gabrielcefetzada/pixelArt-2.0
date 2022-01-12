@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Tool } from "./Tool";
-import { ToolProps } from "./Tool";
+import { Tool } from "../components/Tool";
+import { ToolProps } from "../components/Tool";
 import "../assets/styles/Tool.css";
 import "../assets/styles/Global.css";
 import "../assets/styles/Colorp.css";
